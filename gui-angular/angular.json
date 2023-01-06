@@ -32,7 +32,44 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "vendor/jquery/jquery-2.2.2.js",
+              "vendor/angular/angular.js",
+              "vendor/angular/angular-sanitize.js",
+              "vendor/angular/angular-translate.js",
+              "vendor/angular/angular-translate-loader-static-files.js",
+              "vendor/angular/angular-dirPagination.js",
+              "vendor/moment/moment.js",
+              "vendor/bootstrap/js/bootstrap.js",
+              "vendor/daterangepicker/daterangepicker.js",
+              "vendor/fancytree/jquery.fancytree-all-deps.js",
+              "syncthing/core/module.js",
+              "syncthing/core/alwaysNumberFilter.js",
+              "syncthing/core/basenameFilter.js",
+              "syncthing/core/binaryFilter.js",
+              "syncthing/core/localeNumberFilter.js",
+              "syncthing/core/percentFilter.js",
+              "syncthing/core/durationFilter.js",
+              "syncthing/core/eventService.js",
+              "syncthing/core/identiconDirective.js",
+              "syncthing/core/languageSelectDirective.js",
+              "syncthing/core/lastErrorComponentFilter.js",
+              "syncthing/core/localeService.js",
+              "syncthing/core/modalDirective.js",
+              "syncthing/core/metricFilter.js",
+              "syncthing/core/notificationDirective.js",
+              "syncthing/core/pathIsSubDirDirective.js",
+              "syncthing/core/popoverDirective.js",
+              "syncthing/core/syncthingController.js",
+              "syncthing/core/tooltipDirective.js",
+              "syncthing/core/uncamelFilter.js",
+              "syncthing/core/uniqueFolderDirective.js",
+              "syncthing/core/validDeviceidDirective.js",
+              "assets/lang/valid-langs.js",
+              "assets/lang/prettyprint.js",
+              "meta.js",
+              "syncthing/app.js"
+            ]
           },
           "configurations": {
             "production": {
