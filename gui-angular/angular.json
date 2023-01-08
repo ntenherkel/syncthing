@@ -42,7 +42,6 @@
             ],
             "scripts": [
               "src/vendor/jquery/jquery-2.2.2.js",
-              "src/vendor/angular/angular.js",
               "src/vendor/angular/angular-sanitize.js",
               "src/vendor/angular/angular-translate.js",
               "src/vendor/angular/angular-translate-loader-static-files.js",
