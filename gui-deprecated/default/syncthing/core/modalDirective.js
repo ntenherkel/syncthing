@@ -4,7 +4,23 @@ angular.module('syncthing.core')
             // If you ever change any of the petroglyphs below, please search for $parent.$parent,
             // as some templates rely on the way scope is composed in this case.
             restrict: 'E',
-            templateUrl: 'modal.html',
+            template: ```
+            <div class='modal fade' tabindex='-1' ng-attr-data-backdrop='{{ closeable == 'yes' ? true : 'static' }}' ng-attr-data-keyboard='{{ closeable == 'yes' ? true : false }}'>
+                <div class='modal-dialog {{ large == 'yes' ? 'modal-lg' : '' }}'>
+                <div class='modal-content'>
+                    <div class='modal-header {{status == 'default' ? '' : 'alert alert-'+status }}'>
+                    <h4 class='modal-title'>
+                        <div ng-if='icon' class='panel-icon'>
+                        <span class='{{icon}}'></span>
+                        </div>
+                        {{heading}}
+                    </h4>
+                    </div>
+                    <div ng-transclude></div>
+                </div>
+                </div>
+            </div>
+            ```,
             replace: true,
             transclude: true,
             scope: {
@@ -15,6 +31,8 @@ angular.module('syncthing.core')
                 large: '@'
             },
             link: function (scope, element, attrs) {
+
+                console.log("triggering modal");
 
                 // before modal show animation
                 $(element).on('show.bs.modal', function () {

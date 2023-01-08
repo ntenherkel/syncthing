@@ -2,12 +2,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-
-  <meta charset="utf-8">
-  <title>Untitled1</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" href="assets/img/favicon-{{syncthingStatus()}}.png"/>
+  <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#0882c8"/>
+  <title ng-bind="thisDeviceName() + ' | Syncthing'"></title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.20/angular.js"></script>
 </head>
 <body >
@@ -35,7 +35,7 @@
   <script type="text/javascript" src="assets/angularjs/core/validDeviceidDirective.js"></script>
   <script type="text/javascript" src="assets/lang/valid-langs.js"></script>
   <script type="text/javascript" src="assets/lang/prettyprint.js"></script>
-  <!-- <script type="text/javascript" src="meta.js"></script> -->
+  <script type="text/javascript" src="meta.js"></script>
   <script type="text/javascript" src="assets/angularjs/app.js"></script>
 
 
@@ -73,8 +73,8 @@
   </noscript>
 
   <div class="ng-cloak">
-    <script type="text/javascript" src="syncthing/development/logbar.js"></script>
-    <div ng-if="version.isBeta" ng-include="'syncthing/development/logbar.html'"></div>
+    <script type="text/javascript" src="assets/angularjs/development/logbar.js"></script>
+    <div ng-if="version.isBeta" ng-include="'assets/angularjs/development/logbar.html'"></div>
     <!-- Top bar -->
 
     <nav class="navbar navbar-top navbar-default" role="navigation">
@@ -966,6 +966,8 @@
       </ul>
     </div>
   </nav>
+
+  <app-hello></app-hello>
 
 </body>
 </html>

@@ -1,19 +1,19 @@
 import { DoBootstrap, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { UpgradeModule } from '@angular/upgrade/static';  
+import { downgradeComponent, UpgradeModule } from '@angular/upgrade/static';  
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestModule } from './test/test.module';
+import { HelloComponent } from './hello/hello.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UpgradeModule,
-    TestModule,
   ],
   providers: [
   ]
