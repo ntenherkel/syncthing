@@ -17,8 +17,8 @@ var syncthing = angular.module('syncthing', [
 var urlbase = 'rest';
 
 syncthing.config(function ($httpProvider, $translateProvider, LocaleServiceProvider) {
-    $httpProvider.defaults.xsrfHeaderName = 'X-CSRF-Token-';
-    $httpProvider.defaults.xsrfCookieName = 'CSRF-Token-';
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRF-Token-1234';
+    $httpProvider.defaults.xsrfCookieName = 'CSRF-Token-1234';
     $httpProvider.useApplyAsync(true);
 
     // language and localisation

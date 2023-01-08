@@ -4,16 +4,17 @@ import { downgradeComponent, UpgradeModule } from '@angular/upgrade/static';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
+import { HelloModule } from './hello/hello.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HelloComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UpgradeModule,
+    HelloModule,
   ],
   providers: [
   ]

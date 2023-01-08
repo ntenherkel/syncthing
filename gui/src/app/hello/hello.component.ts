@@ -7,6 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
   ngOnInit(){
-    console.log("Hello from Angular 15");
+    console.log("Hello from Angular 15 hello component");
   }
 }
