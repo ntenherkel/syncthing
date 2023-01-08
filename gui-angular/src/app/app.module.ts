@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule } from '@angular/upgrade/static';  
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TestModule } from './test/test.module';
 
 @NgModule({
   declarations: [
@@ -11,19 +12,17 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UpgradeModule
+    UpgradeModule,
+    TestModule,
   ],
   providers: [
-    // https://github.com/ui-router/sample-app-angular-hybrid/blob/master/src/app/app.module.ts
-    // Register some AngularJS services as Angular providers
-    // { provide: 'DialogService', deps: ['$injector'], useFactory: getDialogService },
-    // { provide: 'Contacts', deps: ['$injector'], useFactory: getContactsService },
   ]
 })
 export class AppModule implements DoBootstrap {
   constructor(private upgrade: UpgradeModule) { }
   
   ngDoBootstrap() {
-    this.upgrade.bootstrap(document.body, ['heroApp'], { strictDi: true });
+    console.log("Bootstrapping in Hybrid mode with Angular 15 & AngularJS 1.3.20");
+    this.upgrade.bootstrap(document.body, ['syncthing', 'angularUtils.directives.dirPagination', 'pascalprecht.translate', 'ngSanitize', 'syncthing.core']);
   }
  }
