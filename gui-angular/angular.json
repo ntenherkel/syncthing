@@ -30,7 +30,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/vendor/bootstrap/css/bootstrap.css",
+              "src/vendor/daterangepicker/daterangepicker.css",
+              "src/assets/font/raleway.css",
+              "src/vendor/fork-awesome/css/fork-awesome.css",
+              "src/vendor/fork-awesome/css/v5-compat.css",
+              "src/assets/css/tree.css",
+              "src/assets/css/overrides.css",
+              "src/assets/css/theme.css"
             ],
             "scripts": [
               "src/vendor/jquery/jquery-2.2.2.js",
