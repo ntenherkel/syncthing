@@ -3,7 +3,6 @@ angular.module('syncthing.core')
         $locationProvider.html5Mode({ enabled: true, requireBase: false }).hashPrefix('!');
     })
     .controller('SyncthingController', function ($scope, $http, $location, LocaleService, Events, $filter, $q, $compile, $timeout, $rootScope, $translate) {
-        'use strict';
 
         // private/helper definitions
 
@@ -3150,6 +3149,7 @@ angular.module('syncthing.core')
         };
 
         $scope.modalLoaded = function () {
+            console.log("GO")
             // once all modal elements have been processed
             if ($('modal').length === 0) {
                 // pseudo main. called on all definitions assigned
@@ -3333,7 +3333,48 @@ angular.module('syncthing.core')
     })
     .directive('shareTemplate', function () {
         return {
-            templateUrl: 'syncthing/core/editShareTemplate.html',
+            template: `
+            <div class="col-md-6 checkbox">
+            <label for="sharedwith-{{id}}">
+                <input id="sharedwith-{{id}}" ng-model="selected[id]" type="checkbox" />
+                <span tooltip data-original-title="{{id}}" ng-bind-html="label"></span>
+            </label>
+            </div>
+            <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon" ng-switch="folderType !== 'receiveencrypted' && !encryptionPasswords[id]">
+                <span ng-switch-when='true' class="fas fa-fw fa-unlock"></span>
+                <span ng-switch-default class="fas fa-fw fa-lock"></span>
+                </span>
+                <span ng-switch="folderType === 'receiveencrypted'">
+                <span ng-switch-when='true'>
+                    <input class="form-control input-sm" type="password" placeholder="{{'Received data is already encrypted' | translate}}" disabled />
+                </span>
+                <span ng-switch-default ng-switch="selected[id]">
+                    <span ng-switch-when='true' ng-switch="untrusted">
+                    <span ng-switch-when='true' ng-class="{'has-error': !encryptionPasswords[id]}">
+                        <input class="form-control input-sm" type="{{plain ? 'text' : 'password'}}" ng-model="encryptionPasswords[id]" required placeholder="{{'Device is untrusted, enter encryption password' | translate}}" />
+                    </span>
+                    <span ng-switch-default>
+                        <input class="form-control input-sm" type="{{plain ? 'text' : 'password'}}" ng-model="encryptionPasswords[id]" placeholder="{{'If untrusted, enter encryption password' | translate}}" />
+                    </span>
+                    </span>
+                    <span ng-switch-default>
+                    <input class="form-control input-sm" type="password" placeholder="{{'Not shared' | translate}}" disabled />
+                    </span>
+                </span>
+                </span>
+                <span ng-switch="selected[id] && folderType !== 'receiveencrypted'" class="input-group-addon">
+                <span ng-switch-when='true'>
+                    <span class="button fas fa-fw fa-eye" ng-click="togglePasswordVisibility()"></span>
+                </span>
+                <span ng-switch-default>
+                    <span class="button fas fa-fw fa-eye" disabled></span>
+                </span>
+                </span>
+            </div>
+            </div>
+            `,
             scope: {
                 selected: '=',
                 encryptionPasswords: '=',

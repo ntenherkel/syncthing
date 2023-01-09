@@ -1,14 +1,14 @@
 import { DoBootstrap, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { downgradeComponent, UpgradeModule } from '@angular/upgrade/static';  
+import { UpgradeModule } from '@angular/upgrade/static';  
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello/hello.component';
 import { HelloModule } from './hello/hello.module';
+import { WiremockService } from './service/wiremock.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -17,6 +17,7 @@ import { HelloModule } from './hello/hello.module';
     HelloModule,
   ],
   providers: [
+    WiremockService,
   ]
 })
 export class AppModule implements DoBootstrap {
