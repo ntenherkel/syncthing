@@ -41,18 +41,6 @@
               "src/assets/css/theme.css"
             ],
             "scripts": [
-              "src/vendor/jquery/jquery-2.2.2.js",
-              "src/vendor/angular/angular.js",
-              "src/vendor/angular/angular-sanitize.js",
-              "src/vendor/angular/angular-translate.js",
-              "src/vendor/angular/angular-translate-loader-static-files.js",
-              "src/vendor/angular/angular-dirPagination.js",
-              "src/vendor/moment/moment.js",
-              "src/vendor/bootstrap/js/bootstrap.js",
-              "src/vendor/daterangepicker/daterangepicker.js",
-              "src/vendor/fancytree/jquery.fancytree-all-deps.js",
-              "src/assets/lang/valid-langs.js",
-              "src/assets/lang/prettyprint.js"
             ]
           },
           "configurations": {
